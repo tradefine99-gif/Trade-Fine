@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Static fallback SEO tags. These are what any crawler that does
+         NOT execute JavaScript will see (notably social link-preview
+         bots — WhatsApp/Facebook/LinkedIn/X — see the note in
+         src/components/common/Seo.jsx). Every other page overrides
+         title/description/OG via that component once React mounts;
+         Googlebot renders JS and will see the per-page values. -->
+    <title>TradeFine Sportswear — Custom OEM & ODM Sportswear Manufacturer</title>
+    <meta
+      name="description"
+      content="TradeFine is a Sialkot, Pakistan-based sportswear manufacturer producing custom teamwear, gym wear and athletic apparel for OEM and ODM buyers worldwide."
+    />
+    <link rel="canonical" href="https://www.tradefinesportswear.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TradeFine Sportswear" />
+    <meta property="og:title" content="TradeFine Sportswear — Custom OEM & ODM Sportswear Manufacturer" />
+    <meta
+      property="og:description"
+      content="Sialkot, Pakistan-based sportswear manufacturer producing custom teamwear, gym wear and athletic apparel for OEM and ODM buyers worldwide."
+    />
+    <meta property="og:url" content="https://www.tradefinesportswear.com/" />
+    <meta property="og:image" content="https://www.tradefinesportswear.com/og-default.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TradeFine Sportswear — Custom OEM & ODM Sportswear Manufacturer" />
+    <meta
+      name="twitter:description"
+      content="Sialkot, Pakistan-based sportswear manufacturer producing custom teamwear, gym wear and athletic apparel for OEM and ODM buyers worldwide."
+    />
+    <meta name="twitter:image" content="https://www.tradefinesportswear.com/og-default.jpg" />
+
+    <!-- Fonts: moved out of a CSS @import (which is render-blocking —
+         the browser must fetch+parse the stylesheet before it even
+         discovers the font request) into discoverable <link> tags the
+         preload scanner picks up immediately, with preconnect ahead of
+         the actual stylesheet request. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+project_id = "mobgzcugdqfxbvdhzkek"
+
+[functions.send-quote-emails]
+# Default JWT verification stays ON. supabase.functions.invoke() from the
+# React app automatically attaches the anon key, so this doesn't need to
+# be disabled — it just means the function can't be called by someone
+# with no Supabase credentials at all.
+verify_jwt = true

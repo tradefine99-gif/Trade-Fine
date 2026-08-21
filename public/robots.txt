@@ -1,0 +1,16 @@
+# TradeFine Sportswear — robots.txt
+# No private/admin routes exist in this build to disallow (there's no
+# admin UI shipped in the frontend), so every real page is left
+# crawlable. Only the sitemap directive and a courtesy disallow of
+# noisy internal query params are added.
+
+User-agent: *
+Allow: /
+
+# The Products page's URL scheme uses query params for state
+# (?category=..., ?product=...) rather than separate paths. These are
+# real, unique, useful pages worth indexing — not filtered out — this
+# comment is just documenting that decision so it isn't mistaken for
+# an oversight later.
+
+Sitemap: https://www.tradefinesportswear.com/sitemap.xml

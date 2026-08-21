@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* Google Fonts now loaded via <link> tags in index.html (non-render-
+   blocking, discoverable by the preload scanner) instead of here —
+   see the comment in index.html. Removing the duplicate @import so
+   the font isn't fetched twice. */
+
+/* ===== Premium Typography Scale ===================================
+   Tailwind v4 derives every text-* utility (text-sm, text-base, text-lg,
+   text-xl ...) from these tokens. Bumping the body-copy sizes here lifts
+   paragraphs, descriptions, list items, footer/nav text, and form labels
+   across the whole site in one place — while leaving text-2xl and above
+   untouched so headings keep their strength and the visual hierarchy
+   is preserved. Values chosen to be a comfortable, *not* oversized, read.
+==================================================================== */
+@theme {
+  --text-xs: 0.875rem;        /* 14px  (was 12px default) */
+  --text-xs--line-height: 1.5;
+  --text-sm: 1rem;            /* 16px  (was 14px default) */
+  --text-sm--line-height: 1.6;
+  --text-base: 1.125rem;      /* 18px  (was 16px default) */
+  --text-base--line-height: 1.65;
+  --text-lg: 1.3125rem;       /* 21px  (was 18px default) */
+  --text-lg--line-height: 1.65;
+  --text-xl: 1.4375rem;       /* 23px  (was 20px default) */
+  --text-xl--line-height: 1.6;
+}
+
+/* ===== Theme Variables ===== */
+
+:root{
+  --primary:#ff6b00;
+  --primary-hover:#e65f00;
+  --secondary:#00d4ff;
+
+  --dark:#0b0f19;
+  --card:#151c29;
+
+  --white:#ffffff;
+  --gray:#94a3b8;
+
+  --radius:16px;
+
+  /* Aliases for shared utility classes */
+  --primary-color:var(--primary);
+  --secondary-color:var(--secondary);
+  --background-color:var(--dark);
+  --card-color:var(--card);
+  --purple-glow:#a855f7;
+}
+
+/* ===== Base ===== */
+
+@layer base {
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--dark);
+  color:white;
+  font-family:"Inter",sans-serif;
+  overflow-x:hidden;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family:"Space Grotesk",sans-serif;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+/* ===== Accessibility: visible keyboard focus ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* =====================================================================
+   Premium "black → orange" gradient system (n8n-inspired)
+   Applied selectively to hero backdrops, CTAs, dividers, and stat/quote
+   sections — not globally, to keep the site balanced and professional.
+===================================================================== */
+.gradient-black-orange {
+  background: linear-gradient(135deg, #05070c 0%, #0b0f19 38%, #4a1d05 78%, #ff6b00 130%);
+}
+
+.gradient-black-orange-radial {
+  background: radial-gradient(120% 120% at 15% 0%, rgba(255,107,0,0.16) 0%, rgba(11,15,25,0) 55%),
+              radial-gradient(120% 120% at 100% 100%, rgba(255,107,0,0.10) 0%, rgba(5,7,12,0) 60%),
+              #05070c;
+}
+
+.gradient-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,107,0,0.5) 50%, transparent 100%);
+}
+
+@keyframes scroll {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+}
+
+/* Reduced motion: framer-motion animations are already covered globally
+   via <MotionConfig reducedMotion="user"> in main.jsx. That doesn't
+   reach plain CSS @keyframes though, and this site has two continuously-
+   looping marquees (the top announcement bar and the trusted-brands
+   logo strip) — exactly the kind of non-stop motion WCAG's reduced-
+   motion guidance calls out. Stopping them (not removing the content)
+   for users who've asked for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-text,
+  .marquee span {
+    animation: none;
+  }
+}
