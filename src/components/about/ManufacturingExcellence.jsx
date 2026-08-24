@@ -65,7 +65,7 @@ export default function ManufacturingExcellence() {
                   <Building2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-white leading-none">25,000+ sq. ft.</div>
+                  <div className="text-sm font-bold text-white leading-none">purpose-built manufacturing unit</div>
                   <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-1">Modern Facility</div>
                 </div>
               </div>
