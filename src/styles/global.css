@@ -87,6 +87,13 @@ strong {
   align-items: center;
   overflow: hidden;
   white-space: nowrap;
+  /* Defensive hardening, not a confirmed root-cause fix (see chat): a
+     flex container's single nowrap-text child can, in some engines,
+     still influence layout sizing upstream before overflow:hidden gets
+     a chance to clip it. min-width:0 forces this container to honor
+     its own w-full/100% sizing rather than any content-driven minimum. */
+  min-width: 0;
+  max-width: 100%;
 }
 
 .marquee span {
