@@ -16,7 +16,7 @@ import factoryImg from "../../assets/factory-real/quality-check-folding-garments
 
 export default function ManufacturingExcellence() {
   return (
-    <section className="relative min-h-screen w-full bg-[#080D16] text-white overflow-hidden py-28">
+    <section className="manufacturing-hero-root relative min-h-screen w-full bg-[#080D16] text-white overflow-x-hidden py-28">
       {/* Self-contained subtle float animations */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes float-slow {
@@ -33,6 +33,52 @@ export default function ManufacturingExcellence() {
         .animate-float-delayed {
           animation: float-delayed 6.5s ease-in-out infinite;
         }
+
+        @media (max-width: 640px) {
+          .manufacturing-hero-root {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+          }
+          .manufacturing-image-shell {
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: 100% !important;
+            grid-column: 1 / -1 !important;
+          }
+          .manufacturing-image-shell > .relative {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 4 / 5 !important;
+          }
+          .manufacturing-mobile-float-cards {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+          }
+          .manufacturing-float-card {
+            position: static !important;
+            top: auto !important;
+            right: auto !important;
+            left: auto !important;
+            bottom: auto !important;
+            transform: none !important;
+            width: 100% !important;
+            max-width: 220px !important;
+            margin: 0.75rem auto 0 !important;
+          }
+          .manufacturing-copy {
+            text-align: center !important;
+            align-items: center !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            grid-column: 1 / -1 !important;
+          }
+          .manufacturing-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
       `}} />
 
       {/* Subtle background grid pattern */}
@@ -43,10 +89,10 @@ export default function ManufacturingExcellence() {
       <div className="absolute bottom-1/3 right-1/4 w-[450px] h-[450px] bg-cyan-500/5 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full z-10 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
+        <div className="manufacturing-grid grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
           
           {/* Left Side: Premium Factory Image with Floating Badges (45% on desktop) */}
-          <div className="col-span-12 lg:col-span-5 relative flex justify-center items-center">
+          <div className="col-span-12 lg:col-span-5 relative flex justify-center items-center max-sm:w-full max-sm:mx-auto manufacturing-image-shell">
             {/* Outer wrapper carries NO overflow-hidden — only the image
                 frame below does. The two floating badges are positioned
                 here as siblings of the frame (not inside it), so their
@@ -71,8 +117,10 @@ export default function ManufacturingExcellence() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080D16] via-transparent to-transparent opacity-70" />
               </div>
 
+              <div className="manufacturing-mobile-float-cards">
+
               {/* Floating Badge 1: Top-Right (Square Footage) */}
-              <div className="absolute top-6 right-2 sm:-right-4 md:-right-6 bg-slate-950/90 backdrop-blur-md border border-orange-500/30 rounded-xl p-3 flex items-center gap-3 shadow-[0_8px_32px_rgba(249,115,22,0.15)] animate-float-slow max-w-[160px] sm:max-w-[200px]">
+              <div className="manufacturing-float-card absolute top-6 right-2 sm:-right-4 md:-right-6 bg-slate-950/90 backdrop-blur-md border border-orange-500/30 rounded-xl p-3 flex items-center gap-3 shadow-[0_8px_32px_rgba(249,115,22,0.15)] animate-float-slow max-w-[160px] sm:max-w-[200px]">
                 <div className="w-9 h-9 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 border border-orange-500/20">
                   <Building2 className="w-5 h-5" />
                 </div>
@@ -83,7 +131,7 @@ export default function ManufacturingExcellence() {
               </div>
 
               {/* Floating Badge 2: Bottom-Left (Monthly Capacity) */}
-              <div className="absolute bottom-12 left-2 sm:-left-4 md:-left-6 bg-slate-950/90 backdrop-blur-md border border-cyan-500/30 rounded-xl p-3 flex items-center gap-3 shadow-[0_8px_32px_rgba(6,182,212,0.15)] animate-float-delayed max-w-[160px] sm:max-w-[200px]">
+              <div className="manufacturing-float-card absolute bottom-12 left-2 sm:-left-4 md:-left-6 bg-slate-950/90 backdrop-blur-md border border-cyan-500/30 rounded-xl p-3 flex items-center gap-3 shadow-[0_8px_32px_rgba(6,182,212,0.15)] animate-float-delayed max-w-[160px] sm:max-w-[200px]">
                 <div className="w-9 h-9 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0 border border-cyan-500/20">
                   <TrendingUp className="w-5 h-5" />
                 </div>
@@ -92,11 +140,13 @@ export default function ManufacturingExcellence() {
                   <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-1">Output Capacity</div>
                 </div>
               </div>
+
+              </div>
             </div>
           </div>
 
           {/* Right Side: Content and Premium Feature Cards (55% on desktop) */}
-          <div className="col-span-12 lg:col-span-7 flex flex-col items-start text-left lg:pl-6">
+          <div className="manufacturing-copy col-span-12 lg:col-span-7 flex flex-col items-start text-left lg:pl-6">
             
             {/* Small Orange Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-bold uppercase tracking-widest text-orange-500 mb-6">
@@ -105,7 +155,7 @@ export default function ManufacturingExcellence() {
             </div>
 
             {/* Large Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6 max-w-full break-words">
               Built for Precision, <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-400 to-cyan-450">
                 Trusted for Quality
@@ -113,7 +163,7 @@ export default function ManufacturingExcellence() {
             </h2>
 
             {/* Narrative Paragraph */}
-            <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-8 max-w-2xl">
+            <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-8 max-w-2xl max-sm:text-sm max-sm:leading-relaxed max-sm:break-words">
               Our advanced sportswear production unit couples modern machinery with meticulous apparel craftsmanship. Backed by rigorous international standards, the TradeFine factory executes automated pattern cutting, high-speed stitching, and multi-tier quality assessments to support global athletic brands with dependable B2B wholesale lines.
             </p>
 

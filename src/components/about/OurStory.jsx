@@ -72,6 +72,39 @@ export default function CompanyStory() {
         .animate-drift-2 {
           animation: float-slow-2 24s ease-in-out infinite;
         }
+        @media (max-width: 640px) {
+          .our-story-grid,
+          .our-story-copy,
+          .our-story-cards,
+          .our-story-card {
+            width: 100%;
+            min-width: 0;
+          }
+          .our-story-grid {
+            grid-template-columns: minmax(0, 1fr);
+          }
+          .our-story-copy,
+          .our-story-cards {
+            grid-column: 1 / -1;
+          }
+          .our-story-copy {
+            align-items: stretch;
+          }
+          .our-story-copy h2,
+          .our-story-copy p,
+          .our-story-card h3,
+          .our-story-card h4,
+          .our-story-card-description {
+            min-width: 0;
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            word-break: normal;
+          }
+          .our-story-button {
+            width: 100%;
+            max-width: 100%;
+          }
+        }
       `}} />
 
       {/* Faint grid overlay matching the home page design language */}
@@ -82,10 +115,10 @@ export default function CompanyStory() {
       <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none animate-drift-2" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+        <div className="our-story-grid grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
           
           {/* Left Side (40%) */}
-          <div className="col-span-12 lg:col-span-5 flex flex-col items-start text-left">
+          <div className="our-story-copy col-span-12 lg:col-span-5 flex flex-col items-start text-left">
             {/* Small Elegant Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-bold uppercase tracking-widest text-orange-500 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
@@ -114,7 +147,7 @@ export default function CompanyStory() {
                 competing with the page's primary gradient CTAs (design-system Phase 2) */}
             <Link
               to="/manufacturing"
-              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-white/15 bg-white/[0.04] backdrop-blur-md text-white font-bold text-sm rounded-xl hover:border-orange-500/40 hover:bg-white/[0.08] transition-all duration-300 hover:-translate-y-0.5 group mt-8"
+              className="our-story-button inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-white/15 bg-white/[0.04] backdrop-blur-md text-white font-bold text-sm rounded-xl hover:border-orange-500/40 hover:bg-white/[0.08] transition-all duration-300 hover:-translate-y-0.5 group mt-8"
             >
               Learn About Our Process
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -122,14 +155,14 @@ export default function CompanyStory() {
           </div>
 
           {/* Right Side (60%) */}
-          <div className="col-span-12 lg:col-span-7">
+          <div className="our-story-cards col-span-12 lg:col-span-7">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
               {STATS_CARDS.map((card) => {
                 const IconComponent = card.icon;
                 return (
                   <div
                     key={card.id}
-                    className={`relative group p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/80 to-slate-950/80 border ${card.border} transition-all duration-500 hover:-translate-y-2 ${card.shadow} overflow-hidden`}
+                    className={`our-story-card relative group p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/80 to-slate-950/80 border ${card.border} transition-all duration-500 hover:-translate-y-2 ${card.shadow} overflow-hidden`}
                   >
                     {/* Hover Glow Accent */}
                     <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -146,7 +179,7 @@ export default function CompanyStory() {
                     <h4 className="text-xs font-semibold tracking-wider text-slate-300 uppercase mb-3.5">
                       {card.subtitle}
                     </h4>
-                    <p className="text-slate-400 text-base leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
+                    <p className="our-story-card-description text-slate-400 text-base leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
                       {card.description}
                     </p>
                   </div>

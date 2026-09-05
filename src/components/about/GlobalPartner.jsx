@@ -16,7 +16,7 @@ import {
 
 export default function GlobalPresence() {
   return (
-    <section className="relative min-h-screen w-full bg-[#080D16] text-white overflow-hidden py-28">
+    <section className="global-partner-root relative min-h-screen w-full bg-[#080D16] text-white overflow-x-hidden py-28">
       {/* Self-contained subtle animations for logistics arcs and floating cards */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes dash {
@@ -49,6 +49,49 @@ export default function GlobalPresence() {
         .animate-pulse-glow {
           animation: pulse-glow 3s ease-in-out infinite;
         }
+
+        @media (max-width: 640px) {
+          .global-partner-root {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+          }
+          .global-partner-layout {
+            gap: 1.25rem !important;
+          }
+          .global-partner-visual {
+            max-width: 100% !important;
+            margin: 0 auto !important;
+          }
+          .global-partner-visual > .relative {
+            aspect-ratio: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+          }
+          .global-partner-visual > .relative > svg {
+            height: auto !important;
+            aspect-ratio: 500 / 350 !important;
+          }
+          .global-partner-floating-card {
+            position: static !important;
+            top: auto !important;
+            right: auto !important;
+            left: auto !important;
+            bottom: auto !important;
+            transform: none !important;
+            width: 100% !important;
+            max-width: 220px !important;
+            margin: 0.75rem auto 0 !important;
+          }
+          .global-partner-copy {
+            text-align: center !important;
+            align-items: center !important;
+            padding-left: 0 !important;
+          }
+          .global-partner-copy h2,
+          .global-partner-copy p {
+            max-width: 100% !important;
+          }
+        }
       `}} />
 
       {/* Subtle background grid pattern */}
@@ -59,11 +102,11 @@ export default function GlobalPresence() {
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full z-10 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
+        <div className="global-partner-layout grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
           
           {/* LEFT SIDE: Premium high-tech global logistics network visualization */}
-          <div className="col-span-12 lg:col-span-6 relative flex justify-center items-center">
-            <div className="relative w-full max-w-[500px] aspect-video sm:aspect-square bg-slate-950/40 backdrop-blur-md rounded-3xl border border-slate-800 p-6 shadow-2xl flex items-center justify-center overflow-visible">
+          <div className="global-partner-visual col-span-12 lg:col-span-6 relative flex justify-center items-center">
+            <div className="relative w-full max-w-[500px] aspect-video sm:aspect-square bg-slate-950/40 backdrop-blur-md rounded-3xl border border-slate-800 p-6 shadow-2xl flex items-center justify-center overflow-visible max-sm:p-4 max-sm:mx-auto">
               
               {/* Pulsing base radial gradient */}
               <div className="absolute inset-0 bg-radial from-cyan-500/5 via-transparent to-transparent opacity-50 animate-pulse-glow pointer-events-none rounded-3xl" />
@@ -111,7 +154,7 @@ export default function GlobalPresence() {
               </svg>
 
               {/* Floating Glass Card 1: Worldwide Exports */}
-              <div className="absolute -top-6 left-2 sm:-left-6 bg-slate-950/80 backdrop-blur-md border border-slate-800/80 rounded-xl p-3 flex items-center gap-3 shadow-xl animate-float-up hover:border-cyan-500/20 transition-all max-w-[150px] sm:max-w-[190px]">
+              <div className="global-partner-floating-card absolute -top-6 left-2 sm:-left-6 bg-slate-950/80 backdrop-blur-md border border-slate-800/80 rounded-xl p-3 flex items-center gap-3 shadow-xl animate-float-up hover:border-cyan-500/20 transition-all max-w-[150px] sm:max-w-[190px]">
                 <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0">
                   <Globe className="w-4 h-4" />
                 </div>
@@ -122,7 +165,7 @@ export default function GlobalPresence() {
               </div>
 
               {/* Floating Glass Card 2: Trusted Manufacturing Partner */}
-              <div className="absolute top-10 right-2 sm:-right-8 bg-slate-950/80 backdrop-blur-md border border-slate-800/80 rounded-xl p-3 flex items-center gap-3 shadow-xl animate-float-down hover:border-orange-500/20 transition-all max-w-[160px] sm:max-w-[200px]">
+              <div className="global-partner-floating-card absolute top-10 right-2 sm:-right-8 bg-slate-950/80 backdrop-blur-md border border-slate-800/80 rounded-xl p-3 flex items-center gap-3 shadow-xl animate-float-down hover:border-orange-500/20 transition-all max-w-[160px] sm:max-w-[200px]">
                 <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0">
                   <CheckCircle2 className="w-4 h-4" />
                 </div>
@@ -133,7 +176,7 @@ export default function GlobalPresence() {
               </div>
 
               {/* Floating Glass Card 3: Fast International Shipping */}
-              <div className="absolute -bottom-6 left-2 sm:left-6 bg-slate-950/80 backdrop-blur-md border border-slate-800/80 rounded-xl p-3 flex items-center gap-3 shadow-xl animate-float-up hover:border-cyan-500/20 transition-all max-w-[160px] sm:max-w-[210px]">
+              <div className="global-partner-floating-card absolute -bottom-6 left-2 sm:left-6 bg-slate-950/80 backdrop-blur-md border border-slate-800/80 rounded-xl p-3 flex items-center gap-3 shadow-xl animate-float-up hover:border-cyan-500/20 transition-all max-w-[160px] sm:max-w-[210px]">
                 <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0">
                   <Navigation className="w-4 h-4" />
                 </div>
@@ -153,7 +196,7 @@ export default function GlobalPresence() {
           </div>
 
           {/* RIGHT SIDE: Narrative, Info Cards, and Badge */}
-          <div className="col-span-12 lg:col-span-6 flex flex-col items-start text-left lg:pl-4">
+          <div className="global-partner-copy col-span-12 lg:col-span-6 flex flex-col items-start text-left lg:pl-4">
             {/* Small Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-bold uppercase tracking-widest text-cyan-400 mb-6 shadow-inner">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
@@ -161,7 +204,7 @@ export default function GlobalPresence() {
             </div>
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6 max-w-full break-words text-wrap-balance">
               Manufacturing for Brands <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-400 to-cyan-450">
                 Around the World

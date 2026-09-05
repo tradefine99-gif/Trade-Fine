@@ -72,9 +72,9 @@ const MissionVision = () => {
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">Core Values</h3>
             <div className="flex flex-wrap gap-2">
-              {coreValues.map((value, idx) => (
+              {coreValues.map((value) => (
                 <span 
-                  key={idx} 
+                  key={value}
                   className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-gray-300 transition-colors duration-300 hover:border-orange-500/50 hover:text-white"
                 >
                   • {value}
