@@ -72,7 +72,7 @@ export default function ManufacturingExcellence() {
               </div>
 
               {/* Floating Badge 1: Top-Right (Square Footage) */}
-              <div className="absolute top-6 -right-4 md:-right-6 bg-slate-950/90 backdrop-blur-md border border-orange-500/30 rounded-xl p-3 flex items-center gap-3 shadow-[0_8px_32px_rgba(249,115,22,0.15)] animate-float-slow max-w-[200px]">
+              <div className="absolute top-6 right-2 sm:-right-4 md:-right-6 bg-slate-950/90 backdrop-blur-md border border-orange-500/30 rounded-xl p-3 flex items-center gap-3 shadow-[0_8px_32px_rgba(249,115,22,0.15)] animate-float-slow max-w-[160px] sm:max-w-[200px]">
                 <div className="w-9 h-9 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 border border-orange-500/20">
                   <Building2 className="w-5 h-5" />
                 </div>
@@ -83,7 +83,7 @@ export default function ManufacturingExcellence() {
               </div>
 
               {/* Floating Badge 2: Bottom-Left (Monthly Capacity) */}
-              <div className="absolute bottom-12 -left-4 md:-left-6 bg-slate-950/90 backdrop-blur-md border border-cyan-500/30 rounded-xl p-3 flex items-center gap-3 shadow-[0_8px_32px_rgba(6,182,212,0.15)] animate-float-delayed max-w-[200px]">
+              <div className="absolute bottom-12 left-2 sm:-left-4 md:-left-6 bg-slate-950/90 backdrop-blur-md border border-cyan-500/30 rounded-xl p-3 flex items-center gap-3 shadow-[0_8px_32px_rgba(6,182,212,0.15)] animate-float-delayed max-w-[160px] sm:max-w-[200px]">
                 <div className="w-9 h-9 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0 border border-cyan-500/20">
                   <TrendingUp className="w-5 h-5" />
                 </div>

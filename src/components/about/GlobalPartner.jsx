@@ -111,7 +111,7 @@ export default function GlobalPresence() {
               </svg>
 
               {/* Floating Glass Card 1: Worldwide Exports */}
-              <div className="absolute -top-6 -left-6 bg-slate-950/80 backdrop-blur-md border border-slate-800/80 rounded-xl p-3 flex items-center gap-3 shadow-xl animate-float-up hover:border-cyan-500/20 transition-all max-w-[190px]">
+              <div className="absolute -top-6 left-2 sm:-left-6 bg-slate-950/80 backdrop-blur-md border border-slate-800/80 rounded-xl p-3 flex items-center gap-3 shadow-xl animate-float-up hover:border-cyan-500/20 transition-all max-w-[150px] sm:max-w-[190px]">
                 <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0">
                   <Globe className="w-4 h-4" />
                 </div>
@@ -122,7 +122,7 @@ export default function GlobalPresence() {
               </div>
 
               {/* Floating Glass Card 2: Trusted Manufacturing Partner */}
-              <div className="absolute top-10 -right-8 bg-slate-950/80 backdrop-blur-md border border-slate-800/80 rounded-xl p-3 flex items-center gap-3 shadow-xl animate-float-down hover:border-orange-500/20 transition-all max-w-[200px]">
+              <div className="absolute top-10 right-2 sm:-right-8 bg-slate-950/80 backdrop-blur-md border border-slate-800/80 rounded-xl p-3 flex items-center gap-3 shadow-xl animate-float-down hover:border-orange-500/20 transition-all max-w-[160px] sm:max-w-[200px]">
                 <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0">
                   <CheckCircle2 className="w-4 h-4" />
                 </div>
@@ -133,7 +133,7 @@ export default function GlobalPresence() {
               </div>
 
               {/* Floating Glass Card 3: Fast International Shipping */}
-              <div className="absolute -bottom-6 left-6 bg-slate-950/80 backdrop-blur-md border border-slate-800/80 rounded-xl p-3 flex items-center gap-3 shadow-xl animate-float-up hover:border-cyan-500/20 transition-all max-w-[210px]">
+              <div className="absolute -bottom-6 left-2 sm:left-6 bg-slate-950/80 backdrop-blur-md border border-slate-800/80 rounded-xl p-3 flex items-center gap-3 shadow-xl animate-float-up hover:border-cyan-500/20 transition-all max-w-[160px] sm:max-w-[210px]">
                 <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0">
                   <Navigation className="w-4 h-4" />
                 </div>
