@@ -47,17 +47,29 @@ export default function ManufacturingExcellence() {
           
           {/* Left Side: Premium Factory Image with Floating Badges (45% on desktop) */}
           <div className="col-span-12 lg:col-span-5 relative flex justify-center items-center">
-            <div className="relative w-full max-w-[440px] aspect-[4/5] rounded-2xl overflow-hidden border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
-              {/* Subtle orange/cyan glowing backdrop behind the image borders */}
-              <div className="absolute -inset-[1px] bg-gradient-to-tr from-cyan-500/20 to-orange-500/20 rounded-2xl pointer-events-none -z-10" />
+            {/* Outer wrapper carries NO overflow-hidden — only the image
+                frame below does. The two floating badges are positioned
+                here as siblings of the frame (not inside it), so their
+                negative offsets can hang past the frame's edge without
+                being clipped by the frame's own overflow-hidden. This
+                was the actual bug: badges used to live *inside* the
+                overflow-hidden frame, which cut them off at narrow
+                (mobile) widths where the frame itself is narrower than
+                the badges' offset + width. Mirrors the working pattern
+                already used in AboutHero.jsx. */}
+            <div className="relative w-full max-w-[440px]">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+                {/* Subtle orange/cyan glowing backdrop behind the image borders */}
+                <div className="absolute -inset-[1px] bg-gradient-to-tr from-cyan-500/20 to-orange-500/20 rounded-2xl pointer-events-none -z-10" />
 
-              <img
-                src={factoryImg}
-                alt="Real TradeFine quality check — finished garments folded and inspected on our floor"
-                className="w-full h-full object-cover object-[center_25%]"
-              />
-              {/* Elegant vignette overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#080D16] via-transparent to-transparent opacity-70" />
+                <img
+                  src={factoryImg}
+                  alt="Real TradeFine quality check — finished garments folded and inspected on our floor"
+                  className="w-full h-full object-cover object-[center_25%]"
+                />
+                {/* Elegant vignette overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080D16] via-transparent to-transparent opacity-70" />
+              </div>
 
               {/* Floating Badge 1: Top-Right (Square Footage) */}
               <div className="absolute top-6 -right-4 md:-right-6 bg-slate-950/90 backdrop-blur-md border border-orange-500/30 rounded-xl p-3 flex items-center gap-3 shadow-[0_8px_32px_rgba(249,115,22,0.15)] animate-float-slow max-w-[200px]">

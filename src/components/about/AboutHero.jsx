@@ -106,7 +106,7 @@ export default function AboutHero() {
               </div>
 
               {/* Top Card: Experience */}
-              <div className="absolute -top-6 -left-8 md:-left-12 lg:-left-6 xl:-left-10 bg-slate-900/90 backdrop-blur-md border border-orange-500/30 rounded-2xl p-4 flex items-center gap-4 shadow-[0_8px_32px_rgba(249,115,22,0.15)] animate-float-medium max-w-xs transition-colors hover:border-orange-500/50">
+              <div className="absolute -top-4 left-2 sm:-left-6 md:-left-12 lg:-left-6 xl:-left-10 bg-slate-900/90 backdrop-blur-md border border-orange-500/30 rounded-2xl p-4 flex items-center gap-4 shadow-[0_8px_32px_rgba(249,115,22,0.15)] animate-float-medium max-w-[170px] sm:max-w-xs transition-colors hover:border-orange-500/50">
                 <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 border border-orange-500/20">
                   <Award className="w-6 h-6" />
                 </div>
@@ -117,7 +117,7 @@ export default function AboutHero() {
               </div>
 
               {/* Middle Card: Exports */}
-              <div className="absolute top-1/2 -right-8 md:-right-12 lg:-right-6 xl:-right-10 transform -translate-y-1/2 bg-slate-900/90 backdrop-blur-md border border-cyan-500/30 rounded-2xl p-4 flex items-center gap-4 shadow-[0_8px_32px_rgba(6,182,212,0.15)] animate-float-fast max-w-xs transition-colors hover:border-cyan-500/50">
+             <div className="absolute top-1/2 right-2 sm:-right-6 md:-right-12 lg:-right-6 xl:-right-10 transform -translate-y-1/2 bg-slate-900/90 backdrop-blur-md border border-cyan-500/30 rounded-2xl p-4 flex items-center gap-4 shadow-[0_8px_32px_rgba(6,182,212,0.15)] animate-float-fast max-w-[170px] sm:max-w-xs transition-colors hover:border-cyan-500/50">
                 <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0 border border-cyan-500/20">
                   <Globe className="w-6 h-6" />
                 </div>
@@ -128,7 +128,7 @@ export default function AboutHero() {
               </div>
 
               {/* Bottom Card: OEM / ODM Services */}
-              <div className="absolute -bottom-6 left-8 md:left-12 lg:left-6 xl:left-10 bg-slate-900/90 backdrop-blur-md border border-slate-800 rounded-2xl p-4 flex items-center gap-4 shadow-[0_8px_32px_rgba(255,255,255,0.05)] animate-float-slow max-w-xs transition-colors hover:border-slate-700">
+              <div className="absolute -bottom-4 left-2 sm:left-6 md:left-12 lg:left-6 xl:left-10 bg-slate-900/90 backdrop-blur-md border border-slate-800 rounded-2xl p-4 flex items-center gap-4 shadow-[0_8px_32px_rgba(255,255,255,0.05)] animate-float-slow max-w-[170px] sm:max-w-xs transition-colors hover:border-slate-700">
                 <div className="w-12 h-12 rounded-xl bg-slate-800/80 flex items-center justify-center text-slate-300 shrink-0 border border-slate-750">
                   <ShieldCheck className="w-6 h-6 text-slate-400" />
                 </div>
